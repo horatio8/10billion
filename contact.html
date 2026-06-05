@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-direction="a">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — The Ten Billion Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav" id="nav"></header>
+<div class="ticker" id="ticker"></div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" style="padding-bottom:48px">
+  <div class="wrap">
+    <div class="eyebrow fade-in"><span class="dot"></span>§ Contact / Get in</div>
+    <h1 class="display-xl fade-in mt-md">Tell us where the<br/>numbers should go.<span style="color:var(--lime)">.</span></h1>
+    <p class="lede mt-lg fade-in" style="max-width:60ch">
+      Four fields. We read every one. Real reply inside 48 hours from the strategist who'd run your engagement, not an automated system.
+    </p>
+  </div>
+</section>
+
+<!-- WIZARD FORM -->
+<section>
+  <div class="wrap">
+    <div class="grid grid-12">
+      <div class="col-4">
+        <div class="eyebrow mb-md"><span class="dot"></span>§ Direct / The fast lane</div>
+        <h3 class="display-sm fade-in">Skip the form.</h3>
+        <p class="mt-md text-dim">If you already know what you want, just email the strategy team directly.</p>
+        <a href="mailto:hello@tenbillion.agency" class="btn btn-ghost mt-md">hello@tenbillion.agency</a>
+
+        <div class="stack mt-xl" style="gap:0">
+          <div style="padding:18px 0;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;letter-spacing:0.04em;text-transform:uppercase">
+            <span class="text-dim">Reply time</span><span>&lt; 48 hours</span>
+          </div>
+          <div style="padding:18px 0;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;letter-spacing:0.04em;text-transform:uppercase">
+            <span class="text-dim">First call</span><span>30 min</span>
+          </div>
+          <div style="padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;letter-spacing:0.04em;text-transform:uppercase">
+            <span class="text-dim">Open seats Q2</span><span class="text-accent">02 / 02</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-8">
+        <div class="wizard fade-in">
+          <div class="wizard-steps">
+            <div class="step on" data-i="1">01 · Tell us who you are</div>
+            <div class="step" data-i="2">02 · Qualify (optional)</div>
+          </div>
+
+          <form id="enquiryForm" onsubmit="event.preventDefault();submitForm();">
+            <!-- Step 1 -->
+            <div class="wizard-pane on" data-pane="1">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" required placeholder="First and last">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="you@brand.com">
+              </div>
+              <div class="field">
+                <label for="mobile">Mobile</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="+1 (555) 555-0142">
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="What's the project? What's the actual numerical target?"></textarea>
+              </div>
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-ghost" onclick="goStep(2)">Add qualification (optional) <span class="arrow">→</span></button>
+                <button type="submit" class="btn btn-primary">Send enquiry <span class="arrow">→</span></button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="wizard-pane" data-pane="2">
+              <div class="eyebrow mb-md"><span class="dot"></span>Optional · helps us prep the call faster</div>
+
+              <div class="field">
+                <label>Company stage</label>
+                <div class="radio-grid">
+                  <label><input type="radio" name="stage" value="pre"><span>Pre-launch</span></label>
+                  <label><input type="radio" name="stage" value="early"><span>$0 – $1M ARR</span></label>
+                  <label><input type="radio" name="stage" value="growth"><span>$1M – $10M ARR</span></label>
+                  <label><input type="radio" name="stage" value="scale"><span>$10M+ ARR</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Service of interest</label>
+                <div class="radio-grid">
+                  <label><input type="radio" name="svc" value="build"><span>Build · One-time pipeline</span></label>
+                  <label><input type="radio" name="svc" value="managed"><span>Managed · Monthly retainer</span></label>
+                  <label><input type="radio" name="svc" value="advisory"><span>Advisory · Intensive</span></label>
+                  <label><input type="radio" name="svc" value="unsure"><span>Not sure yet</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Monthly budget for content</label>
+                <div class="radio-grid">
+                  <label><input type="radio" name="budget" value="u10"><span>Under $10K</span></label>
+                  <label><input type="radio" name="budget" value="10-25"><span>$10–25K</span></label>
+                  <label><input type="radio" name="budget" value="25-50"><span>$25–50K</span></label>
+                  <label><input type="radio" name="budget" value="50p"><span>$50K+</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Timeline to engage</label>
+                <div class="radio-grid">
+                  <label><input type="radio" name="timeline" value="now"><span>Now · Q2 2026</span></label>
+                  <label><input type="radio" name="timeline" value="q3"><span>Q3 2026</span></label>
+                  <label><input type="radio" name="timeline" value="q4"><span>Q4 2026 or later</span></label>
+                  <label><input type="radio" name="timeline" value="exploring"><span>Just exploring</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="extra">Anything else?</label>
+                <textarea id="extra" name="extra" placeholder="Constraints, prior agencies, internal team, anything that would help."></textarea>
+              </div>
+
+              <div class="wizard-actions">
+                <button type="button" class="btn btn-ghost" onclick="goStep(1)">← Back</button>
+                <button type="submit" class="btn btn-primary">Send enquiry <span class="arrow">→</span></button>
+              </div>
+            </div>
+          </form>
+
+          <div id="submitted" style="display:none;text-align:center;padding:40px 20px">
+            <div class="chip accent mb-md">● Received</div>
+            <h3 class="display-sm">We've got it.</h3>
+            <p class="lede mt-md" style="margin-left:auto;margin-right:auto">A real human will reply inside 48 hours. If this is urgent, email <a href="mailto:hello@tenbillion.agency" style="color:var(--lime)">hello@tenbillion.agency</a> directly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICE LOCATIONS -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow mb-md"><span class="dot"></span>§ Locations / Where we are</div>
+    <h2 class="display-md mb-xl fade-in">Three cities, one operation.</h2>
+
+    <div class="grid grid-3">
+      <div class="card fade-in">
+        <div class="mono" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--lime)">● HQ</div>
+        <h4 class="mt-md display-sm" style="font-size:32px">Charleston</h4>
+        <p class="mt-md text-dim">Strategy &amp; operations.</p>
+        <p class="mono mt-md" style="font-size:13px;letter-spacing:0.04em">42 King St., Suite 4<br/>Charleston, SC 29401</p>
+      </div>
+      <div class="card fade-in">
+        <div class="mono" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-dim)">● Studio</div>
+        <h4 class="mt-md display-sm" style="font-size:32px">New York</h4>
+        <p class="mt-md text-dim">Production &amp; edit.</p>
+        <p class="mono mt-md" style="font-size:13px;letter-spacing:0.04em">114 W 27th St., 6F<br/>New York, NY 10001</p>
+      </div>
+      <div class="card fade-in">
+        <div class="mono" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-dim)">● Field</div>
+        <h4 class="mt-md display-sm" style="font-size:32px">Los Angeles</h4>
+        <p class="mt-md text-dim">Talent &amp; analytics.</p>
+        <p class="mono mt-md" style="font-size:13px;letter-spacing:0.04em">By appointment only<br/>Los Angeles, CA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot" id="foot"></footer>
+
+<script>window.PAGE = 'contact';</script>
+<script src="shared.js"></script>
+<script>
+  function goStep(n) {
+    document.querySelectorAll('.wizard-pane').forEach(p => p.classList.toggle('on', p.dataset.pane == n));
+    document.querySelectorAll('.wizard-steps .step').forEach(s => s.classList.toggle('on', s.dataset.i == n));
+    window.scrollTo({ top: document.querySelector('.wizard').offsetTop - 100, behavior: 'smooth' });
+  }
+  function submitForm() {
+    document.getElementById('enquiryForm').style.display = 'none';
+    document.querySelector('.wizard-steps').style.display = 'none';
+    document.getElementById('submitted').style.display = 'block';
+  }
+</script>
+</body>
+</html>
